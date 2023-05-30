@@ -6,10 +6,10 @@ const userSchema = new Schema(
     first: String,
     last: String,
     age: Number,
-    applications: [
+    Thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Application',
+        ref: 'Thought',
       },
     ],
   },
