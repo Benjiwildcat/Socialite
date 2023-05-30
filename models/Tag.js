@@ -1,22 +1,15 @@
 const { Schema, Types } = require('mongoose');
 
-const assignmentSchema = new Schema(
+const tagSchema = new Schema(
   {
-    assignmentId: {
+    tagId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    assignmentName: {
+    tagBody: {
       type: String,
       required: true,
-      maxlength: 50,
-      minlength: 4,
-      default: 'Unnamed assignment',
-    },
-    score: {
-      type: Number,
-      required: true,
-      default: () => Math.floor(Math.random() * (100 - 70 + 1) + 70),
+      maxlength: 25,
     },
     createdAt: {
       type: Date,
@@ -31,4 +24,4 @@ const assignmentSchema = new Schema(
   }
 );
 
-module.exports = assignmentSchema;
+module.exports = tagSchema;
