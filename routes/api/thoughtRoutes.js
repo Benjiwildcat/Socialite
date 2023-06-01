@@ -14,15 +14,15 @@ router.route('/').get(getThoughts).post(createThought);
 
 // /api/Thoughts/:ThoughtId
 router
-  .route('/:ThoughtId')
+  .route('/:thoughtId')
   .get(getSingleThought)
   .put(updateThought)
   .delete(deleteThought);
 
-// /api/Thoughts/:ThoughtId/tags
-router.route('/:ThoughtId/reactions').post(addReaction);
+// /api/thoughts/:thoughtId/tags
+router.route('/:thoughtId/reactions').post(addReaction);
 
-// /api/Thoughts/:ThoughtId/tags/:tagId
-router.route('/:ThoughtId/tags/:reactionId').delete(removeReaction);
+// /api/thoughts/:thoughtId/tags/:tagId
+router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
 module.exports = router;
